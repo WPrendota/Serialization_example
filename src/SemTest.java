@@ -6,7 +6,7 @@ public class SemTest extends Sem implements Serialization{
     public static void main(String[] args) throws IOException, ClassNotFoundException{
         Sem sem = new Sem(); //Creation of Sem new object.
 
-        String dir = "C:\\Users\\Witek\\Pictures\\HP_1.png"; // Image file direction.
+        String dir = ""; // Image file direction.
 
         sem.imgLoad(dir);
         sem.imgSave(dir); // Saving image to file.
