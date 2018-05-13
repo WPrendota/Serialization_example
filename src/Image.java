@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +11,7 @@ abstract class Image implements Serializable{
     int type;
     File file;
     transient BufferedImage img;
+    ImageIcon ii;
 
     // Constructors:
     public Image(){

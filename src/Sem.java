@@ -1,4 +1,6 @@
 import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
@@ -40,6 +42,7 @@ public class Sem extends Image {
                 super.width = super.img.getWidth();
                 super.height = super.img.getHeight();
                 super.type = super.img.getType();
+                super.ii = new ImageIcon(super.img);
                 System.out.println("File loaded from: " + dir);
             }
             else{
@@ -59,6 +62,12 @@ public class Sem extends Image {
         try{
             if(super.img != null){
                 ImageIO.write(super.img, "tif", new File(dir));
+            }
+            if(super.ii != null){
+                super.img = new BufferedImage(super.ii.getIconWidth(), super.ii.getIconHeight(), BufferedImage.TYPE_INT_RGB);
+                Graphics g = super.img.createGraphics();
+                super.ii.paintIcon(null, g, 0,0);
+                g.dispose();
             }
             else{
                 System.out.println("Error during file saving.");

@@ -7,7 +7,6 @@ public interface Serialization {
         try{
             FileOutputStream fos = new FileOutputStream(dir);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            ImageIO.write(sem.img, "png", new File(dir+".png"));
             oos.writeObject(sem);
             oos.close();
             System.out.println("Object saved: "+dir+".");
@@ -16,7 +15,7 @@ public interface Serialization {
             ex.printStackTrace();
         }
     }
-    //-------------------------------- // Saving object.
+    //--------------------------------
 
     // Loading Sem object from file: 'SEM.sem'.
     public static Object loadObject(String dir) throws IOException, ClassNotFoundException {
@@ -25,5 +24,5 @@ public interface Serialization {
 
         return ois.readObject();
     }
-    //-------------------------------- // Loading object.
+    //--------------------------------
 }
