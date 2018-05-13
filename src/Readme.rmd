@@ -1,7 +1,18 @@
 Serialization example of image file information written in JAVA.
 
-Example with test class.
+Example supported by test class (SemTest).
 
-Problem with image serialization. Image have to be saved/loaded independently.
+Interface Serialization used for saving/loading objects to/from file with '.sem' extension.
+
+'Image' abstract class:
+- three types of constructors: Image(), Image(String name) and Image(BufferedImage img).
+'Sem' class:
+- extends 'Image' abstract class.
+- methods:
+  - imgInfo() - print informations about image,
+  - imgSave() - save file as image,
+  - imgLoad() - load image from file,
+  - getImgName() - get image file name,
+- three types of constructors: Sem(), Sem(String name) and Sem(BufferedImage img).
 
 Witek
